@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz name="sample test 10/17/2017" complexity="hard">
+    <text>For the following multiple choice questions try to choose the best answer.</text>
+    <multipleChoice points="5">
+        <q>How many atoms are in a light bulb</q>
+        <a correct="false">42</a>
+        <a correct="false">7 million</a>
+        <a correct="true">OutOfMemoryError</a>
+    </multipleChoice>
+    <multipleChoice points="3">
+        <q>Who is the best teacher?</q>
+        <a correct="true">Mr. Steinburg</a>
+        <a>Mr. Walsh</a>
+        <a>Mrs. Caster</a>
+        <a>Mr. Yost</a>
+    </multipleChoice>
+    <multipleChoice>
+        <q>Which of the following is a cool science dude?</q>
+        <a>George Zimmerman</a>
+        <a>Donald Trump</a>
+        <a correct="true">Albert Einstein</a>
+        <a correct="true">Nikola Tesla</a>
+        <a>Yo mama</a>
+    </multipleChoice>
+    <multipleChoice>
+        <q>Who is the first president</q>
+        <a>John Adams</a>
+        <a>Wooddraw wilson</a>
+        <a>Warren G Hardy</a>
+        <a>harriet tubman</a>
+        <a correct="true">G Dubs</a>
+    </multipleChoice>
+
+    <text>Match the following to the best of your ability</text>
+    <matching>
+        <pair>
+            <left>France</left>
+            <right>A country that makes a lot of cheese</right>
+        </pair>
+        <pair>
+            <left>Germany</left>
+            <right>gesundheit!</right>
+        </pair>
+        <pair>
+            <left>United States</left>
+            <right>Loves their guns and hamburgers</right>
+        </pair>
+        <pair>
+            <left>Japan</left>
+            <right>makin that rice and sushi</right>
+        </pair>
+        <pair>
+            <left>Switzerland</left>
+            <right>No one cares about them</right>
+        </pair>
+    </matching>
+    <matching>
+        <pair>
+            <left>Mans best friend</left>
+            <right>dog</right>
+        </pair>
+        <pair>
+            <left>Furry, has claws, and garfeild is one</left>
+            <right>cat</right>
+        </pair>
+        <pair>
+            <left>has a cool trunk</left>
+            <right>elephant</right>
+        </pair>
+        <pair>
+            <left>Its not actually a lady, it's an insect</left>
+            <right>ladybug</right>
+        </pair>
+    </matching>
+
+    <text>For each of the following, fill in the blank.</text>
+    <shortAnswer points="20">
+        <text>What is my favorite food? hint: it usually has a crust and a fruit filling</text>
+        <a>pie</a>
+    </shortAnswer>
+    <shortAnswer points="3">
+        <text>If it doesn't <blank/>, you must aquit.</text>
+        <a>fit</a>
+    </shortAnswer>
+</quiz>
