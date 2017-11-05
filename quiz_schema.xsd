@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="quiz">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name="text" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="Question" minOccurs="1" maxOccurs="1"/>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="Question" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="text" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:choice>
+		</xs:sequence>	
+		<xs:attribute name="name" type="xs:string" use="required"/>
+        <xs:attribute name="complexity" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="easy"/>
+                    <xs:enumeration value="medium"/>
+                    <xs:enumeration value="hard"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="Question" abstract="true"/>
+
+<xs:element name="multipleChoice" substitutionGroup="Question">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name="q" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="a" minOccurs="2" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="correct" type="xs:boolean" default="true"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="points" type="xs:int" default="1"/>
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="matching" substitutionGroup="Question">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name="pair" minOccurs="2" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="left"/>
+						<xs:element name="right"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="points" type="xs:int" default="1"/>
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="shortAnswer" substitutionGroup="Question">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name="text">
+				<xs:complexType mixed="true">
+					<xs:sequence>
+						<xs:element name="blank" minOccurs="0" maxOccurs="unbounded">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="0"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="a" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="points" type="xs:int" default="1"/>
+	</xs:complexType>
+</xs:element>
+
+</xs:schema> 
